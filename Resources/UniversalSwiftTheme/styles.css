@@ -1,0 +1,230 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  
+  /* MARK: - Colors */
+  --background-color: #fff;
+  --secondary-background-color: #e2e2e2;
+  --label-color: #000;
+  --secondary-label-color: rgba(60, 60, 67, 0.6);
+  --primary-color: rgb(240, 81, 55);
+}
+
+@media(prefers-color-scheme: dark) {
+  * {
+    --background-color: #000;
+    --secondary-background-color: #1F1F24;
+    --label-color: rgba(255, 255, 255, 0.85);
+    --secondary-label-color: rgba(235, 235, 245, 0.6);
+  }
+}
+
+/* MARK: - Base */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,Arial, sans-serif;
+  font-size: 18px;
+  background: var(--background-color);
+  color: var(--label-color);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  line-height: 1.4;
+}
+
+@media(min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.readable-content {
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+@media(min-width: 800px) {
+  .container {
+    padding-top: 2rem;
+  }
+}
+
+@media(min-width: 1000px) {
+  .readable-content {
+    padding: 0;
+  }
+}
+
+/* MARK: - LP Header */
+
+.lp-header {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 2rem;
+  justify-items: center;
+  text-align: center;
+}
+
+@media(min-width: 800px) {
+  .lp-header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: initial;
+    justify-items: initial;
+    align-items: start;
+    text-align: initial;
+    grid-gap: 0;
+  }
+}
+
+.lp-header .text h2 {
+  color: var(--secondary-label-color);
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+@media(min-width: 800px) {
+  .lp-header .text {
+    margin-top: 3rem;
+  }
+
+  .lp-header .text h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.lp-header .illustration {
+  /* visually center */
+  margin-left: 1em;
+  height: 10rem;
+}
+
+.lp-header .illustration svg {
+  height: 100%;
+  width: auto;
+}
+
+.lp-header .illustration svg .plant {
+  transform-origin: center bottom 0;
+  animation: 7s ease-in-out 0s infinite normal none running plantWave;
+}
+
+.lp-header .illustration svg .ellipse {
+  stroke-dasharray: 700px;
+  stroke-dashoffset: 700px;
+  fill-opacity: 0;
+  stroke-opacity: 0;
+  stroke: #fff;
+  stroke-width: 0;
+  animation: 2s ease-out 0s 1 normal forwards running logoStroke;
+}
+
+.lp-header .illustration svg .swift {
+  transform-origin: center top 0;
+  animation: 1s ease-in-out .5s 1 normal forwards running swiftFlight;
+  fill-opacity: 0;
+}
+
+@media(min-width: 800px) {
+  .lp-header .illustration {
+    order: 1;
+    justify-self: end;
+    height: 20rem;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .lp-header .illustration svg .plant, .lp-header .illustration svg .ellipse, .lp-header .illustration svg .swift {
+    animation: none;
+  }
+
+  .lp-header .illustration svg .ellipse {
+    stroke-dashoffset: 700px;
+    fill-opacity: 1;
+  }
+
+  .lp-header .illustration svg .swift {
+    fill-opacity: 1;
+  }
+}
+
+/* MARK: - Keyframes */
+
+@keyframes plantWave {
+  0% {
+    transform:rotate(0)
+  }
+  20% {
+    transform:rotate(-1deg)
+  }
+  40% {
+    transform:rotate(0)
+  }
+  60% {
+    transform:rotate(-3deg)
+  }
+  75% {
+    transform:rotate(0)
+  }
+  90% {
+    transform:rotate(-1deg)
+  }
+  100% {
+    transform:rotate(0)
+  }
+}
+
+@keyframes logoStroke {
+  0% {
+    stroke-width:3px;
+    stroke-opacity:0;
+    stroke-dashoffset:700px
+  }
+  20% {
+    stroke-opacity:.8
+  }
+  40% {
+    stroke-opacity:1;
+    fill-opacity:0
+  }
+  100% {
+    stroke-dashoffset:0;
+    fill-opacity:1
+  }
+}
+
+@keyframes swiftFlight {
+  0% {
+    transform:translateY(-16px) translateX(-16px);
+    -webkit-transform:translateY(-16px) translateX(-16px);
+    fill-opacity:0
+  }
+  60% {
+    fill-opacity:0
+  }
+  100% {
+    transform:translateY(0px) translateX(0px);
+    -webkit-transform:translateY(0px) translateX(0px);
+    fill-opacity:1
+  }
+}
