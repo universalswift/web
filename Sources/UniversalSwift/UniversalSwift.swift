@@ -8,7 +8,9 @@ struct UniversalSwift: Website {
 	}
 
 	struct ItemMetadata: WebsiteItemMetadata {
-		var path: String?
+		let path: String
+		let description: String
+		let date: Date
 	}
 
 	let url = URL(string: "https://www.universalswift.blog")!
