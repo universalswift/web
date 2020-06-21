@@ -1,0 +1,23 @@
+# file options
+
+--swiftversion 5.2
+--exclude .build
+--exclude .publish
+--exclude .swiftpm
+--exclude Output
+
+# format options
+
+--ifdef no-indent
+--patternlet inline
+--self insert
+--stripunusedargs closure-only
+--wraparguments before-first
+--indent tabs
+--tabwidth 2
+--commas inline
+--stripunusedargs closure-only
+
+# rules
+
+--enable isEmpty

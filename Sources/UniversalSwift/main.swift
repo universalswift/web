@@ -1,0 +1,27 @@
+import Files
+import Foundation
+import Ink
+import Publish
+import SplashPublishPlugin
+
+try UniversalSwift().publish(using: [
+	.step(named: "Use custom DateFormatter") { context in
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd"
+		context.dateFormatter = formatter
+	},
+	.step(named: "Remove headings from posts") { context in
+		context.markdownParser.addModifier(Modifier(target: .headings) { html, heading in
+			guard heading.starts(with: "# ") else {
+				return html
+			}
+			return ""
+		})
+	},
+	.installPlugin(.splash(withClassPrefix: "")),
+	.addMarkdownFiles(),
+	.copyResources(),
+	.generateHTML(withTheme: .universalSwift),
+	.generateRSSFeed(including: [.articles]),
+	.generateSiteMap()
+])
