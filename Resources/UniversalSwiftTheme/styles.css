@@ -65,6 +65,26 @@ pre, code {
   font-family: "Code";
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+header, main, footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
 .readable-content {
   margin: 0 auto;
   padding: 0 1rem;
@@ -424,6 +444,35 @@ pre code .dotAccess {
 
 pre code .preprocessing {
   color: #b68a00;
+}
+
+.page-footer {
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.page-footer svg {
+  width: auto;
+  fill: var(--label-color);
+}
+
+.page-footer .logo {
+  height: 2.4rem;
+}
+
+.page-footer .creator svg {
+  height: 2rem;
+  margin-left: 1.4rem;
+}
+
+.page-footer .social a:not(:last-child) {
+  margin-right: .5rem;
+}
+
+.page-footer .social svg {
+  height: 1.4rem;
 }
 
 /* MARK: - Keyframes */
