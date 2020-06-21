@@ -17,5 +17,5 @@ struct UniversalSwift: Website {
 	let name = "Universal Swift"
 	let description = "Platform-agnostic articles about the Swift programming language"
 	let language = Language.english
-	let imagePath: Path? = "images/logo.png"
+	let imagePath: Path? = "images/meta.png"
 }
