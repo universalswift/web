@@ -78,7 +78,7 @@ enum MyKey: StorageKey {
 }
 ```
 
-> In this case, I’m using an empty `enum` for `MyKey` as we’re only interested in its static type information and don’t need to be able to instantiate a value. This concept is also known as phantom types.
+> In this case, I’m using an empty `enum` for `MyKey` as we’re only interested in its static type information and don’t want to be able to instantiate a value. This concept is also known as phantom types, meaning, it’s a type that can never have an actual instance (it has no cases!)
 
 Let’s take a closer look at the `Dictionary` API. Values are set and retrieved through a subscript. This subscript takes an instance of the defined `Key` and its setter takes an instance of the defined `Value` type. This, however, does not fit our requirements. To understand why, let’s try and create a `Dictionary` keyed by our `StorageKey` protocol:
 
