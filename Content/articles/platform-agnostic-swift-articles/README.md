@@ -17,10 +17,6 @@ Many amazing resources cover different aspects of the language, but a lot of the
 
 Since this project is all about the Swift community, I'd love for you to contribute your ideas/requests for specific topics to be covered in upcoming posts by [creating issues on GitHub](https://github.com/universalswift/web/issues) ❤️ 
 
-## Recommended read
-
-As this blog's first tradition, every article will include a personally recommended read. The first recommendation that came to my mind is the [Advanced Swift book 📖](https://www.objc.io/books/advanced-swift/), which was one of the most helpful resources for me as a follow-up to the official Swift book.
-
 ## Fun fact
 
 Universal Swift itself is built using Swift and generated with [Publish](https://github.com/JohnSundell/Publish). You can check out the source code [on GitHub](https://github.com/universalswift/web).
