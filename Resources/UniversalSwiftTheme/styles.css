@@ -11,6 +11,7 @@
   --secondary-label-color: rgba(60, 60, 67, 0.6);
   --primary-color: rgb(240, 81, 55);
   --separator-color: rgba(60, 60, 67, 0.29);
+  --highlight-color: rgba(240, 81, 55, 0.2);
 }
 
 @media(prefers-color-scheme: dark) {
@@ -383,6 +384,23 @@ main {
   padding: 6px;
   border-radius: 8px;
   margin: 1px;
+}
+
+.article-detail blockquote {
+	border-radius: 8px;
+	background: var(--highlight-color);
+	border-left: 10px solid var(--primary-color);
+	margin: 1.5em 0;
+	padding: 0.5em 16px;
+}
+
+.article-detail blockquote p {
+	display: inline;
+}
+
+.article-detail blockquote p code {
+  background: var(--primary-color);
+  color: #fff;
 }
 
 /* MARK: - Syntax Highlighting */
