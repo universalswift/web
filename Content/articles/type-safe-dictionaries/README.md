@@ -87,7 +87,7 @@ var storage = [ObjectIdentifier: Any]()
 storage[ObjectIdentifier(MyKey.self)] = 0
 ```
 
-As you can see, we had to still use the `Any` type as the `Dictionarie`'s value type because it does not allow for associating the key with its value type. That way we still have to deal with the two `Optional`s and cast manually. Also, we can insert whatever type we want as a value for a given key, no matter what its `associatedtype` defines. `MyKey` for example defines `String` as its `Value` type, but the compiler is still happy with us storing in an `Int` in the dictionary.
+As you can see, we had to still use the `Any` type as the `Dictionarie`'s value type because it does not allow for associating the key with its value type. That way we still have to deal with the two `Optional`s and cast manually. Also, we can insert whatever type we want as a value for a given key, no matter what its `associatedtype` defines. `MyKey` for example defines `String` as its `Value` type, but the compiler is still happy with us storing an `Int` in the dictionary.
 
 ### Wrapping things up with a custom Storage type
 
