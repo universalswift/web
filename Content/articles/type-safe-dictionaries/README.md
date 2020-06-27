@@ -62,7 +62,7 @@ Because we can make the assumption that every key is known upfront, we can **def
 let key = ObjectIdentifier(MyType.self)
 ```
 
-### Associating Key -> Value
+### Associating Key -\> Value
 
 Additionaly to using the key type as a unique identifier, we can take advantage of another powerful Swift feature: `associatedtype`
 
@@ -87,7 +87,7 @@ var storage = [ObjectIdentifier: Any]()
 storage[ObjectIdentifier(MyKey.self)] = 0
 ```
 
-As you can see, we had to still use the `Any` type as the `Dictionarie`'s value type because it does not allow for associating the key with its value type. That way we still have to deal with the two `Optional`s and cast manually. Also, we can insert whatever type we want as a value for a given key, no matter what its `associatedtype` defines.
+As you can see, we had to still use the `Any` type as the `Dictionarie`'s value type because it does not allow for associating the key with its value type. That way we still have to deal with the two `Optional`s and cast manually. Also, we can insert whatever type we want as a value for a given key, no matter what its `associatedtype` defines. `MyKey` for example defines `String` as its `Value` type, but the compiler is still happy with us storing in an `Int` in the dictionary.
 
 ### Wrapping things up with a custom Storage type
 
@@ -147,5 +147,9 @@ print(storage[SecondKey.self]?.username ?? "No value stored")
 
 ## Credits
 
-Thanks to [@ktosopl](https://twitter.com/@ktosopl) for introducing me to this pattern. 
-You can see it [in my BaggageContext code](https://github.com/slashmo/gsoc-swift-baggage-context/blob/main/Sources/Baggage/BaggageContext.swift) and [in Vapor's codebase](https://github.com/vapor/vapor/blob/master/Sources/Vapor/Utilities/Storage.swift).
+Thanks to [@ktosopl][1] for introducing me to this pattern. 
+You can see it [in my BaggageContext code][2] and [in Vapor's codebase][3].
+
+[1]:	https://twitter.com/@ktosopl
+[2]:	https://github.com/slashmo/gsoc-swift-baggage-context/blob/main/Sources/Baggage/BaggageContext.swift
+[3]:	https://github.com/vapor/vapor/blob/master/Sources/Vapor/Utilities/Storage.swift
