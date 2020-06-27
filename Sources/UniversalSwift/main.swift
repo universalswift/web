@@ -20,6 +20,14 @@ try UniversalSwift().publish(using: [
 	},
 	.installPlugin(.splash(withClassPrefix: "")),
 	.addMarkdownFiles(),
+	.step(named: "Set image path") { context in
+		let imagePath = context.site.imagePath
+		context.mutateAllSections { section in
+			section.mutateItems { item in
+				item.imagePath = imagePath
+			}
+		}
+	},
 	.copyResources(),
 	.generateHTML(withTheme: .universalSwift),
 	.generateRSSFeed(including: [.articles]),
