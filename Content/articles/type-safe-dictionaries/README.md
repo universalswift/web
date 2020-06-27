@@ -147,5 +147,5 @@ print(storage[SecondKey.self]?.username ?? "No value stored")
 
 ## Credits
 
-Thanks to [@ktoso](https://twitter.com/@ktoso "@ktoso") for introducing me to this pattern. 
+Thanks to [@ktosopl](https://twitter.com/@ktosopl) for introducing me to this pattern. 
 You can see it [in my BaggageContext code](https://github.com/slashmo/gsoc-swift-baggage-context/blob/main/Sources/Baggage/BaggageContext.swift) and [in Vapor's codebase](https://github.com/vapor/vapor/blob/master/Sources/Vapor/Utilities/Storage.swift).
