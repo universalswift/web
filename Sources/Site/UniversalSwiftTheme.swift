@@ -3,7 +3,7 @@ import Plot
 import Publish
 
 extension Theme where Site == UniversalSwift {
-	static var universalSwift: Self {
+	public static var universalSwift: Self {
 		Theme(htmlFactory: UniversalSwift.HTMLFactory(), resourcePaths: ["Resources/UniversalSwiftTheme/styles.css"])
 	}
 }

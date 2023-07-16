@@ -1,6 +1,6 @@
 # file options
 
---swiftversion 5.2
+--swiftversion 5.8
 --exclude .build
 --exclude .publish
 --exclude .swiftpm
